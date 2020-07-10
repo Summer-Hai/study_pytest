@@ -1,5 +1,3 @@
-
-
 #实现计算机
 class Calculator:
 
@@ -8,3 +6,9 @@ class Calculator:
 
     def div(self,a ,b):
         return a / b
+
+    def multiplication(self,a,b):
+        return a * b
+
+    def  subtraction(self,a,b):
+        return a - b
