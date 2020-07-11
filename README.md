@@ -9,3 +9,8 @@
 
 ### 作业文件：
 test_calc.py，conftest.py和calc.py
+
+### 删除了没用的文件夹
+
+更新了test_calc.py文件
+
