@@ -1,6 +1,8 @@
 from pythoncode.calc import Calculator
-import pytest
+import pytest,yaml
+from decimal import Decimal
 
+print(Decimal('0.1')-Decimal('0.0003'))
 
 def setup_module():
     print("模块级别setup")
@@ -49,11 +51,7 @@ class TestCalc:
         cal = Calculator()
         assert cal.add(1, 1) == 2
 
-    @pytest.mark.parametrize(("a", "b", "result"), [
-        (1, 2, 3),
-        (2, 3, 5),
-        (5, 6, 11)
-    ])
+    @pytest.mark.parametrize("a,b,result",yaml.safe_load(open("./test_data/test_calc.yaml")) )
     @pytest.mark.add
     def test_add1(self, a, b, result):
         cal = Calculator()
@@ -63,3 +61,7 @@ class TestCalc:
     def test_div(self):
         cal = Calculator()
         assert cal.div(4, 2) == 2
+
+    @pytest.mark.parametrize("user",yaml.safe_load(open("./test_data/test_user.yaml")))
+    def test_print(self,username,password):
+        print("username=",username,"password",password)
