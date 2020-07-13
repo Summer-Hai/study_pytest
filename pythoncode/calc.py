@@ -7,8 +7,8 @@ class Calculator:
     def div(self,a ,b):
         return a / b
 
-    def multiplication(self,a,b):
+    def mul(self,a,b):
         return a * b
 
-    def  subtraction(self,a,b):
+    def  sub(self,a,b):
         return a - b
